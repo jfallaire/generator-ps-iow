@@ -1,11 +1,8 @@
 {
   "name": "generator-ps-iow",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "generator to serve CoveoPS folks to setup the Sphinx environment in order create an Implementation of Work (IOW)",
-  "scripts": {
-    "version": "git commit -m 'bumping version'",
-    "postversion": "git push && git push --tags"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jfallaire/generator-ps-iow.git"
