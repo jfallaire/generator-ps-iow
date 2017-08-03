@@ -1,4 +1,6 @@
-# generator-ps-iow [![Build Status](https://travis-ci.org/jfallaire/generator-ps-iow.svg?branch=master)](https://travis-ci.org/jfallaire/generator-ps-iow) [![npm version](https://badge.fury.io/js/generator-ps-iow.svg)](https://badge.fury.io/js/generator-ps-iow)
+# generator-ps-iow 
+
+[![Build Status](https://travis-ci.org/jfallaire/generator-ps-iow.svg?branch=master)](https://travis-ci.org/jfallaire/generator-ps-iow) [![npm version](https://badge.fury.io/js/generator-ps-iow.svg)](https://badge.fury.io/js/generator-ps-iow)
 
 
 > generator to serve CoveoPS folks to setup the Sphinx environment in order create an Implementation of Work (IOW)
