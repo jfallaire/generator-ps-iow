@@ -1,6 +1,6 @@
 {
   "name": "generator-ps-iow",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "generator to serve CoveoPS folks to setup the Sphinx environment in order create an Implementation of Work (IOW)",
   "scripts": {},
   "repository": {
