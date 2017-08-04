@@ -56,77 +56,42 @@ Install rst2pdf with command ([https://github.com/rst2pdf/rst2pdf](https://githu
 Scaffolds out a complete generator directory structure for you:
 
 ```
-|-- <CustomerName>-iow
-    |-- .editorconfig
-    |-- .gitattributes
-    |-- .gitignore
-    |-- .travis.yml
-    |-- LICENSE
-    |-- README.md
-    |-- gulpfile.js
-    |-- package.json
-    |-- tsconfig.json
-    |-- webpack.config.js
-    |-- config
-    |   |-- config.development.js
-    |   |-- config.global.js
-    |   |-- config.production.js
-    |   |-- index.js
-    |-- gulpTasks
-    |   |-- compile.js
-    |   |-- css.js
-    |   |-- dev.js
-    |   |-- prettify.js
-    |   |-- setup.js
-    |-- sass
-    |   |-- AgentBox.scss
-    |   |-- AgentFullSearch.scss
-    |   |-- CommunityFullSearch.scss
-    |-- src
-    |   |-- Index.ts
-    |   |-- custo
-    |   |   |-- <CustomerName>Custo.ts
-    |   |   |-- <CustomerName>Helper.ts
-    |   |   |-- <CustomerName>Initialization.ts
-    |   |-- events
-    |   |   |-- CustomEvents.ts
-    |   |-- ui
-    |-- vendor
-    |   |-- coveo
-    |   |   |-- Box
-    |   |   |   |-- css
-    |   |   |   |   |-- CoveoBoxNew.css
-    |   |   |   |-- js
-    |   |   |       |-- CoveoJsSearch_Box.d.ts
-    |   |   |       |-- CoveoJsSearch_Box.js
-    |   |   |       |-- templates
-    |   |   |           |-- All.js
-    |   |   |           |-- Chatter.js
-    |   |   |           |-- Dropbox.js
-    |   |   |           |-- Email.js
-    |   |   |           |-- GoogleDrive.js
-    |   |   |           |-- Jira.js
-    |   |   |           |-- Lithium.js
-    |   |   |           |-- People.js
-    |   |   |           |-- Salesforce.js
-    |   |   |           |-- SharePoint.js
-    |   |   |           |-- YouTube.js
-    |   |   |           |-- box.new.templates.js
-    |   |   |-- resources
-    |   |       |-- css
-    |   |       |-- gulpTasks
-    |   |       |-- img
-    |   |       |-- js
-    |   |-- coveo-ps
-    |       |-- CoveoPSComponents.Custom.js
-    |       |-- CoveoPSComponents.Custom.js.map
-    |-- views
-        |-- pages
-        |   |-- agent-box.ejs
-        |   |-- agent-full-search.ejs
-        |   |-- community-search.ejs
-        |-- partials
-        |-- templates
+└── <customer-name>-iow
+    ├── CoveoCloudPlatform
+    │   ├── analytics-config.rst
+    │   ├── coveo-sources
+    │   ├── pipeline-config.rst
+    │   └── sources.rst
+    ├── Makefile
+    ├── Overview
+    │   ├── architecture.rst
+    │   ├── contacts.rst
+    │   ├── links.rst
+    │   ├── salesforce_orgs.rst
+    │   ├── source_code.rst
+    │   └── summary.rst
+    ├── README.md
+    ├── Salesforce
+    │   ├── Deployment
+    │   └── Salesforce
+    ├── UI_custo.rst
+    ├── _build
+    │   └── html
+    ├── _static
+    │   ├── css
+    │   ├── img
+    │   └── js
+    ├── _templates
+    │   └── layout.html
+    ├── _themes
+    │   └── sphinx_rtd_theme
+    ├── appendixA.rst
+    ├── appendixB.rst
+    ├── conf.py
+    ├── dev.rst
+    ├── index.rst
+    ├── make.bat
+    └── runSite.bat
 
 ```
 
