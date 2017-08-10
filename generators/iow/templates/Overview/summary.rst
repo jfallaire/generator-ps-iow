@@ -2,7 +2,44 @@
 Summary
 *******
 
-The Coveo implementation includes two main components:
+User interfaces
+===============
 
-- The Coveo Cloud Platform
-- The Coveo for Salesforce package, which provides search interfaces and other components to leverage the indexed information
+The solution implements the following user interfaces:
+
+For Agents
+----------
+
+    :Agent Panel For Cases: proactively recommends case-resolving content based upon the details of the case-at-hand
+    :Agent Full Search Page: federated search web application were Agents can search across all indexed content
+    :Community Search: federated search web application were Agents can search across all indexed content
+
+For Administrators
+------------------
+
+    :Coveo Cloud V2 Administration Console: allows to index content management
+
+For Business Analysts
+---------------------
+
+    :Usage Dashboards: allows to evaluate the user adoption and identify what users are searching for and determine if they find content they are looking for.
+
+Content
+=======
+
+The solution leverages existing content:
+
+    :Salesforce: Knowledge Articles (FAQ), Cases
+
+Technologies
+============
+
+The solution uses the following technologies and components:
+
+    :Coveo Cloud V2 Platform: index, search results API, Usage Analytics reporting
+    :Coveo for Salesforce V2: provides components used for a Agent Panel for Cases, and Agent Full Search
+
+Success Criteria of initial implementation
+==========================================
+
+See test scenarios `Initial Implementation - Success criteria <http://www.coveo.com/>`_ 
