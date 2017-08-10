@@ -21,6 +21,7 @@ The main documentation for the site is organized into a couple sections:
 
    Overview/summary   
    Overview/architecture
+   Overview/coveo_orgs
    Overview/salesforce_orgs
    Overview/source_code
    Overview/contacts
