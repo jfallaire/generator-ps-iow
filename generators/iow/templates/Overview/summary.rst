@@ -36,8 +36,9 @@ Technologies
 
 The solution uses the following technologies and components:
 
-    :Coveo Cloud V2 Platform: index, search results API, Usage Analytics reporting
-    :Coveo for Salesforce V2: provides components used for a Agent Panel for Cases, and Agent Full Search
+    :Coveo Cloud V2 Platform: index, search results API, Usage Analytics reporting (See `Documentation <https://developers.coveo.com/x/ygDi>`_)
+    :Coveo for Salesforce V2: provides components used for a Agent Panel for Cases, and Agent Full Search (See `Documentation <https://developers.coveo.com/x/KICpAQ>`_ and `Release Notes <https://developers.coveo.com/x/OICpAQ>`_)
+    :Coveo JavaScript Search V1: provides UI components used for search interfaces (See `Documentation <https://developers.coveo.com/x/OIGfAQ>`_ and `Release Notes <https://developers.coveo.com/x/eoGfAQ>`_)
 
 Success Criteria of initial implementation
 ==========================================
