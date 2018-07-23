@@ -38,6 +38,22 @@ Install rst2pdf with command ([https://github.com/rst2pdf/rst2pdf](https://githu
 
     python -m pip install rst2pdf
 
+## Upgrading your package
+
+If most of the previous packages were already installed, ensure to upgrade them either manually one by one or upgrade all at once
+
+* Method 1: Manually one by one
+
+    ```
+    pip install package_name --upgrade
+    ```
+
+* Method 2: Upgrade all at once
+
+    ```
+    pip install $(pip list --outdated |tail -n +3 | awk '{ print $1}') --upgrade
+    ```
+
 
 ## Getting started
 
