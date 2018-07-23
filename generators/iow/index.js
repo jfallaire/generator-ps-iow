@@ -17,21 +17,22 @@ module.exports = class extends Generator {
     initializing() {
         this.props = {};
         this.props.customerName = this.options.customer;
-        this.props.customerSafeName = _.snakeCase(this.options.customer);
+        // this.props.customerSafeName = _.snakeCase(this.props.customer);
+        this.props.customerSafeName = _.camelCase(this.props.customer);
     }
 
     writing() {
 
-        const templateObj = { 
-          customerSafeName : this.props.customerSafeName,
-          capitalizeCustomerSafeName : this.props.customerSafeName.replace(/\b\w/g, l => l.toUpperCase()),
+        const templateObj = {
+            customerSafeName: this.props.customerSafeName,
+            capitalizeCustomerSafeName: this.props.customerSafeName.replace(/\b\w/g, l => l.toUpperCase()),
         }
 
         this.fs.copyTpl(
-          this.templatePath('**'),
-          this.destinationRoot(), 
-          templateObj
+            this.templatePath('**'),
+            this.destinationRoot(),
+            templateObj
         );
-        
+
     }
 }

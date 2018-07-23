@@ -21,6 +21,7 @@ The main documentation for the site is organized into a couple sections:
 
    Overview/summary   
    Overview/architecture
+   Overview/coveo_orgs
    Overview/salesforce_orgs
    Overview/source_code
    Overview/contacts
@@ -28,28 +29,39 @@ The main documentation for the site is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Coveo Cloud Configuration
+   :caption: Features
 
-   CoveoCloudPlatform/sources
-   CoveoCloudPlatform/pipeline-config
-   CoveoCloudPlatform/analytics-config
+   Salesforce/Features/overview
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Configuration
+
+   Configuration/CoveoCloudPlatform/overview
+   Configuration/Salesforce/overview
 
 .. toctree::
    :maxdepth: 2
-   :caption: Salesforce Customizations
+   :caption: Customization
 
-   Salesforce/Salesforce/search_interfaces
-   Salesforce/Deployment/change_sets
-   UI_custo
+   Customization/Custo/overview
+   Customization/PS_Components/overview
 
 .. toctree::
    :maxdepth: 2
+   :caption: Deployment
+
+   Deployment/CoveoCloudPlatform/overview
+   Deployment/Salesforce/overview
+
+.. toctree::
+   :maxdepth: 1
    :caption: Developer documentation
 
-   dev
+   Development/overview
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Appendices
 
    appendixA

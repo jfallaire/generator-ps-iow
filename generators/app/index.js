@@ -23,21 +23,22 @@ module.exports = class extends Generator {
         ));
 
         var prompts = [{
-          type: 'input',
-          name: 'customer',
-          message: 'Your customer name?',
-          default: path.basename(process.cwd())
+            type: 'input',
+            name: 'customer',
+            message: 'Your customer name?',
+            default: path.basename(process.cwd())
         }];
 
         return this.prompt(prompts).then(function (props) {
-          this.props = props;
-          this.props.repoName = utils.makeRepoName(this.props.customer);
-          this.props.customerSafeName = _.snakeCase(this.props.customer);
+            this.props = props;
+            this.props.repoName = utils.makeRepoName(this.props.customer);
+            // this.props.customerSafeName = _.snakeCase(this.props.customer);
+            this.props.customerSafeName = _.camelCase(this.props.customer);
         }.bind(this));
-        
+
     }
 
-    default() {
+    default () {
         if (path.basename(this.destinationPath()) !== this.props.repoName) {
             this.log(
                 'You must be inside a folder named ' + this.props.repoName + '\n' +
@@ -46,9 +47,9 @@ module.exports = class extends Generator {
             mkdirp(this.props.repoName);
             this.destinationRoot(this.destinationPath(this.props.repoName));
         }
-        
+
         this.composeWith(require.resolve('../iow'), {
-          customer: this.props.customer
+            customer: this.props.customer
         });
     }
 
@@ -56,42 +57,42 @@ module.exports = class extends Generator {
         this.log('writing');
         const templateObj = {
             repoName: this.props.repoName,
-            customerSafeName : this.props.customerSafeName,
-            capitalizeCustomerSafeName : this.props.customerSafeName.replace(/\b\w/g, l => l.toUpperCase())
+            customerSafeName: this.props.customerSafeName,
+            capitalizeCustomerSafeName: this.props.customerSafeName.replace(/\b\w/g, l => l.toUpperCase())
         }
 
         this.log('writing >>> ' + JSON.stringify(templateObj));
-        
-        
+
+
         // we want to copy all _xxxxx folder without templating
         this.fs.copy(
-          this.templatePath('_*/**'),
-          this.destinationRoot()
+            this.templatePath('_*/**'),
+            this.destinationRoot()
         );
 
         //copy all other files with templating option
         this.fs.copyTpl(
-          this.templatePath('conf.py'),
-          this.destinationPath('conf.py'),
-          templateObj
+            this.templatePath('conf.py'),
+            this.destinationPath('conf.py'),
+            templateObj
         );
 
         this.fs.copyTpl(
-          this.templatePath('Makefile'),
-          this.destinationPath('Makefile'),
-          templateObj
+            this.templatePath('Makefile'),
+            this.destinationPath('Makefile'),
+            templateObj
         );
 
         this.fs.copyTpl(
-          this.templatePath('README.md'),
-          this.destinationPath('README.md'),
-          templateObj
+            this.templatePath('README.md'),
+            this.destinationPath('README.md'),
+            templateObj
         );
 
         this.fs.copyTpl(
-          this.templatePath('*.bat'),
-          this.destinationRoot(),
-          templateObj
+            this.templatePath('*.bat'),
+            this.destinationRoot(),
+            templateObj
         );
     }
 
@@ -99,6 +100,5 @@ module.exports = class extends Generator {
         this.log(this.props);
     }
 
-    end() {
-    }
+    end() {}
 };

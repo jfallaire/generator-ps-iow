@@ -1,4 +1,4 @@
-.. _salesforce_org:
+.. _salesforce_orgs:
 
 ***************
 Salesforce Orgs
@@ -14,6 +14,5 @@ Details regarding the Project Salesforce Org and deployed Coveo for Salesforce p
 | ?                  | ``?``                    | ?                   | ``?``                    | ?                  | ``?``                    |
 +--------------------+--------------------------+---------------------+--------------------------+--------------------+--------------------------+
 
-
 .. HINT::
-    Direct link to install Coveo for Salesforce ``?``: ``org/packaging/installPackage.apexp?FILEVERSION``
+    `Month YYYY Release - vX.XX <https://developers.coveo.com/x/OICpAQ>`_
