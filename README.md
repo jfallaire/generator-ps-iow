@@ -48,7 +48,7 @@ If most of the previous packages were already installed, ensure to upgrade them 
     pip install package_name --upgrade
     ```
 
-* Method 2: Upgrade all at once
+* Method 2: Upgrade all at once (not working on windows platform)
 
     ```
     pip install $(pip list --outdated |tail -n +3 | awk '{ print $1}') --upgrade
