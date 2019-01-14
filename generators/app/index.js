@@ -14,28 +14,36 @@ module.exports = class extends Generator {
 
     initializing() {
         this.props = {};
+        if(this.options.customer){
+            this.props.customer = this.options.customer;
+        }
+        this.props.root = this.options.root || process.cwd();
+    }
+
+    _askFor() {
+        const prompts = [{
+            type: 'input',
+            name: 'customer',
+            message: 'Your customer (project) name?',
+            default: path.basename(process.cwd()),
+            when: !this.props.customer
+        }];
+        return this.prompt(prompts).then(props => {
+            this.props = extend(this.props, props);
+            this.props.repoName = utils.makeRepoName(this.props.customer);
+            this.props.destinationRoot = path.join(this.props.root, this.props.repoName);
+            this.props.customerSafeName = _.camelCase(this.props.customer);
+        });
     }
 
     prompting() {
-        // Have Yeoman greet the user.
-        this.log(yosay(
-            'Welcome to the fabulous ' + chalk.red('ps-iow') + ' generator!'
-        ));
-
-        var prompts = [{
-            type: 'input',
-            name: 'customer',
-            message: 'Your customer name?',
-            default: path.basename(process.cwd())
-        }];
-
-        return this.prompt(prompts).then(function (props) {
-            this.props = props;
-            this.props.repoName = utils.makeRepoName(this.props.customer);
-            // this.props.customerSafeName = _.snakeCase(this.props.customer);
-            this.props.customerSafeName = _.camelCase(this.props.customer);
-        }.bind(this));
-
+        if(!this.props.customer){
+            // Have Yeoman greet the user.
+            this.log(yosay(
+                'Welcome to the fabulous ' + chalk.red('ps-search-ui-sfdc') + ' generator!'
+            ));
+        }
+        return this._askFor();
     }
 
     default () {
@@ -45,15 +53,11 @@ module.exports = class extends Generator {
                 'I\'ll automatically create this folder.'
             );
             mkdirp(this.props.repoName);
-            this.destinationRoot(this.destinationPath(this.props.repoName));
         }
-
-        this.composeWith(require.resolve('../iow'), {
-            customer: this.props.customer
-        });
     }
 
     writing() {
+        this.destinationRoot(this.props.destinationRoot);
         this.log('writing');
         const templateObj = {
             repoName: this.props.repoName,
@@ -94,11 +98,18 @@ module.exports = class extends Generator {
             this.destinationRoot(),
             templateObj
         );
+
+        this.composeWith(require.resolve('../iow'), {
+            customer: this.props.customer,
+            destinationRoot: this.props.destinationRoot
+        });
     }
 
     install() {
         this.log(this.props);
     }
 
-    end() {}
+    end() {
+        
+    }
 };
